@@ -1,3 +1,27 @@
+.content-hidden {
+    display: none;
+}
+
+/* Optional: Add CSS for a loading spinner here */
+.loader {
+    padding-top: 100px;
+    place-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgb(255, 215, 0, 0.4);
+  border-top: 5px solid #f3f3f3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -84,20 +108,22 @@ header p {
 }
 
 .highlight {
-  position: relative;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 0, 0, 0.5); /* Red with transparency */
-  color: white;
-  padding: 5px 15px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  z-index: 10; /* Ensure it stays above the image */
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.5);
+    /* Red with transparency */
+    color: white;
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    /* Ensure it stays above the image */
 }
 
 section {
