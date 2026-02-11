@@ -73,7 +73,8 @@ header p {
     color: rgba(0, 0, 0, 0.783);
     text-decoration: none;
     border-radius: 20px;
-    font-weight: 700;
+    font-size: 1.5em;
+    font-weight: 600;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -120,7 +121,7 @@ section p {
     margin: 0 auto 50px;
     text-align: center;
     color: #4b5563;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
 }
 
 .image-grid {
@@ -146,11 +147,12 @@ section p {
 .image-overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(255, 255, 0, 0.01);
+    background-color: rgba(255, 255, 0, 0.05);
     /* Light overlay color */
     border-radius: 5px;
     /* Match image corners */
     z-index: 1;
+    display: block;
 }
 
 .image-text {
