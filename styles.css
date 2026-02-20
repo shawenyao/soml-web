@@ -380,6 +380,7 @@ footer a {
     background: white;
     border: 1px solid #aaa;
     overflow: hidden; 
+    -webkit-backface-visibility: hidden;
 }
 
 .front img{
