@@ -70,7 +70,7 @@ updateState();
 let startX = 0;
 let startY = 0;
 const thresholdX = 30; // Reduced threshold for more sensitivity
-const thresholdY = 60; // Reduced threshold for more sensitivity
+const thresholdY = 45; // Reduced threshold for more sensitivity
 
 function handleStart(e, x, y) {
   // Prevent mouse emulation on touch devices to stop "double clicks"
