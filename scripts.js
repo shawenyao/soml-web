@@ -92,8 +92,9 @@ function handleEnd(e, endX) {
   }
 }
 
+const viewport = document.querySelector('.viewport');
 // Event Listeners
-document.addEventListener('touchstart', e => handleStart(e, e.touches[0].clientX), { passive: false });
-document.addEventListener('touchend', e => handleEnd(e, e.changedTouches[0].clientX), { passive: false });
-document.addEventListener('mousedown', e => handleStart(e, e.clientX));
-document.addEventListener('mouseup', e => handleEnd(e, e.clientX));
+viewport.addEventListener('touchstart', e => handleStart(e, e.touches[0].clientX), { passive: false });
+viewport.addEventListener('touchend', e => handleEnd(e, e.changedTouches[0].clientX), { passive: false });
+viewport.addEventListener('mousedown', e => handleStart(e, e.clientX));
+viewport.addEventListener('mouseup', e => handleEnd(e, e.clientX));
