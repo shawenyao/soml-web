@@ -238,7 +238,9 @@ footer a {
     .image-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    .book.opened { transform: translateX(50%); }
+    .book { transform: translateX(50%); }
+    .book.front-cover { transform: translateX(0px); }
+    .book.back-cover { transform: translateX(100%); }
 }
 
 @media (max-width: 767px) {
@@ -255,6 +257,7 @@ footer a {
     }
 
     .book {transform: translateX(50px);}
+    .book.back-cover { transform: translateX(85%); }
 }
 
 .slideshow {
