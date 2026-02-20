@@ -371,6 +371,8 @@ footer a {
     transform-style: preserve-3d;
     transition: transform var(--flip-speed) ease-in-out;
     pointer-events: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .front, .back {
