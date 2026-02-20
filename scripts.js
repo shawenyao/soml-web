@@ -35,7 +35,7 @@ function updateState() {
       // Page is flipped to the LEFT
       page.classList.add('flipped');
       // Immediate high z-index for flipped pages to stay on top
-      page.style.zIndex = 10 + index;
+      page.style.zIndex = 100 + index;
       page.style.transform = `rotateY(-180deg) translateX(-1px)`;
     } else {
       // Page is unflipped on the RIGHT
@@ -48,7 +48,7 @@ function updateState() {
           if (!page.classList.contains('flipped')) {
             page.style.zIndex = pages.length - index;
           }
-        }, 200); // Delay roughly 1/4 of your --flip-speed (0.6s)
+        }, 100); // Delay roughly 1/4 of your --flip-speed (0.6s)
       } else {
         page.style.zIndex = pages.length - index;
       }
