@@ -40,8 +40,19 @@ function updateState() {
     } else {
       // Page is unflipped on the RIGHT
       page.classList.remove('flipped');
-      page.style.zIndex = pages.length - index;
-      
+
+      // FIX: Delay the z-index reset when going backward
+      // This prevents the "underneath" images from popping in too early
+      if (index === currentIdx) {
+        setTimeout(() => {
+          if (!page.classList.contains('flipped')) {
+            page.style.zIndex = pages.length - index;
+          }
+        }, 200); // Delay roughly 1/4 of your --flip-speed (0.6s)
+      } else {
+        page.style.zIndex = pages.length - index;
+      }
+
       // Stacked offset on the right
       const offset = (index - currentIdx) * 3;
       page.style.transform = `rotateY(0deg) translateX(${offset}px)`;
