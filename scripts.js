@@ -21,7 +21,7 @@ const book = document.getElementById('book');
 const pages = document.querySelectorAll('.page');
 let currentIdx = 0;
 
-function updateState() {
+function updateState(direction) {
   if (currentIdx == 0) {
     book.classList.add('front-cover');
   } else if (currentIdx == pages.length) {
@@ -30,8 +30,9 @@ function updateState() {
     book.classList.remove('front-cover');
     book.classList.remove('back-cover');
   }
+
   pages.forEach((page, index) => {
-    if (index <= currentIdx) {
+    if ((index <= currentIdx) || (direction === 'previous')) {
       page.style.visibility = 'visible';
     } else {
       page.style.visibility = 'hidden';
@@ -61,8 +62,8 @@ function updateState() {
 
 }
 
-function goNext() { if (currentIdx < pages.length) { currentIdx++; updateState(); } }
-function goPrev() { if (currentIdx > 0) { currentIdx--; updateState(); } }
+function goNext() { if (currentIdx < pages.length) { currentIdx++; updateState(direction='next'); } }
+function goPrev() { if (currentIdx > 0) { currentIdx--; updateState(direction='previous'); } }
 
 updateState();
 
