@@ -43,7 +43,8 @@ function updateState(direction) {
       page.classList.add('flipped');
       // Immediate high z-index for flipped pages to stay on top
       page.style.zIndex = 10 + index;
-      page.style.transform = `rotateY(-180deg) translateX(-1px)`;
+
+      page.style.transform = `rotateY(-180deg)`;
     } else {
       // Page is unflipped on the RIGHT
       page.classList.remove('flipped');
@@ -53,9 +54,7 @@ function updateState(direction) {
         page.style.zIndex = pages.length - index;
       }, 100);
 
-      // Stacked offset on the right
-      const offset = (index - currentIdx) * 3;
-      page.style.transform = `rotateY(0deg) translateX(${offset}px)`;
+      page.style.transform = `rotateY(0deg)`;
     }
 
   });
