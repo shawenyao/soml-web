@@ -242,8 +242,13 @@ footer a {
          transform: translateX(50%) translateZ(0);
          -webkit-transform: translateX(50%) translateZ(0);
     }
-    .book.front-cover { transform: translateX(0px); }
-    .book.back-cover { transform: translateX(100%); }
+    .book.front-cover {
+        transform: translateX(0px) translateZ(0);
+        -webkit-transform: translateX(0px) translateZ(0);
+    }
+    .book.back-cover {
+        transform: translateX(100%) translateZ(0);
+        -webkit-transform: translateX(100%) translateZ(0);}
 }
 
 @media (max-width: 767px) {
@@ -263,8 +268,12 @@ footer a {
         transform: translateX(50px) translateZ(0);
         -webkit-transform: translateX(50px) translateZ(0);
     }
-    .book.book.front-cover {transform: translateX(50px);}
-    .book.back-cover { transform: translateX(85%); }
+    .book.book.front-cover {
+        transform: translateX(50px) translateZ(0);
+        -webkit-transform: translateX(50px) translateZ(0);}
+    .book.back-cover {
+        transform: translateX(85%) translateZ(0);
+        -webkit-transform: translateX(85%) translateZ(0);}
 }
 
 .slideshow {
