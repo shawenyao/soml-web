@@ -31,7 +31,7 @@ function updateState() {
     book.classList.remove('back-cover');
   }
   pages.forEach((page, index) => {
-    if (index <= currentIdx + 1) {
+    if (index <= currentIdx) {
       page.style.visibility = 'visible';
     } else {
       page.style.visibility = 'hidden';
