@@ -1,9 +1,18 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Crops content wider than screen */
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #1f2937;
     background-color: rgb(255, 215, 0, 0.5);
     line-height: 1.6;
+    padding: 0;
+    overflow-x: hidden; /* Crops content wider than screen */
 }
 
 /* VIDEO HERO */
@@ -245,7 +254,7 @@ footer a {
         grid-template-columns: 1fr;
     }
 
-    .book {transform: translateX(50px); }
+    .book {transform: translateX(50px);}
 }
 
 .slideshow {
