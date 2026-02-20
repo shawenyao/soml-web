@@ -239,16 +239,14 @@ footer a {
         grid-template-columns: repeat(3, 1fr);
     }
     .book {
-         transform: translateX(50%) translateZ(0);
-         -webkit-transform: translateX(50%) translateZ(0);
+         transform: translateX(50%);
     }
     .book.front-cover {
-        transform: translateX(0px) translateZ(0);
-        -webkit-transform: translateX(0px) translateZ(0);
+        transform: translateX(0px);
     }
     .book.back-cover {
-        transform: translateX(100%) translateZ(0);
-        -webkit-transform: translateX(100%) translateZ(0);}
+        transform: translateX(100%);
+    }
 }
 
 @media (max-width: 767px) {
@@ -265,15 +263,14 @@ footer a {
     }
 
     .book {
-        transform: translateX(50px) translateZ(0);
-        -webkit-transform: translateX(50px) translateZ(0);
+        transform: translateX(50px);
     }
     .book.book.front-cover {
-        transform: translateX(50px) translateZ(0);
-        -webkit-transform: translateX(50px) translateZ(0);}
+        transform: translateX(50px);
+    }
     .book.back-cover {
-        transform: translateX(85%) translateZ(0);
-        -webkit-transform: translateX(85%) translateZ(0);}
+        transform: translateX(85%);
+    }
 }
 
 .slideshow {
