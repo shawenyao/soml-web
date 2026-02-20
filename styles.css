@@ -369,7 +369,7 @@ footer a {
     --flip-speed: 0.9s;
 }
 
-.viewport { perspective: 1800px; display: flex; justify-content: center; width: 100%; }
+.viewport { perspective: 1800px; display: flex; justify-content: center; width: 100%; transform-style: preserve-3d; }
 
 .book {
     position: relative;
