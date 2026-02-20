@@ -69,7 +69,8 @@ updateState();
 
 let startX = 0;
 let startY = 0;
-const threshold = 30; // Reduced threshold for more sensitivity
+const thresholdX = 30; // Reduced threshold for more sensitivity
+const thresholdX = 60; // Reduced threshold for more sensitivity
 
 function handleStart(e, x, y) {
   // Prevent mouse emulation on touch devices to stop "double clicks"
@@ -81,10 +82,10 @@ function handleStart(e, x, y) {
 function handleEnd(e, endX, endY) {
   const diffX = endX - startX;
   const diffY = endY - startY;
-  if (Math.abs(diffX) > threshold) {
+  if (Math.abs(diffX) > thresholdX) {
     diffX > 0 ? goPrev() : goNext();
-  } else if (Math.abs(diffY) > threshold){
-    diffY > 0 ? goPrev() : goNext();
+  } else if (Math.abs(diffY) > thresholdY){
+    diffY < 0 ? goPrev() : goNext();
   } else {
     // CLICK LOGIC:
     // Left half of screen -> Previous
