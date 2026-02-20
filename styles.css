@@ -348,7 +348,6 @@ footer a {
     --book-width: 545px;
     --book-height: 400px;
     --flip-speed: 0.9s;
-    --spine-shadow: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
 }
 
 .viewport { perspective: 1800px; display: flex; justify-content: center; width: 100%; }
@@ -377,8 +376,7 @@ footer a {
     backface-visibility: hidden;
     background: white;
     border: 1px solid #aaa;
-    overflow: hidden; /* Clips image to page bounds */
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden; 
 }
 
 .front img{
@@ -398,15 +396,6 @@ footer a {
 }
 
 .back { transform: rotateY(180deg); }
-
-/* Smooth Spine shadow */
-.page::after {
-    content: ''; position: absolute;
-    top: 0; left: 0; width: 100px; height: 100%;
-    background: var(--spine-shadow);
-    opacity: 0; transition: opacity var(--flip-speed);
-    z-index: 10; pointer-events: none;
-}
 
 .flipped::after { opacity: 1; }
 .flipped { transform: rotateY(-180deg); }
