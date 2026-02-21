@@ -32,7 +32,7 @@ function updateState(direction) {
   }
 
   pages.forEach((page, index) => {
-    if ((index <= currentIdx) || (direction === 'previous')) {
+    if ((index <= currentIdx) || (direction === 'prev')) {
       page.style.visibility = 'visible';
     } else {
       page.style.visibility = 'hidden';
@@ -42,7 +42,7 @@ function updateState(direction) {
       // Page is flipped to the LEFT
       page.classList.add('flipped');
       // Immediate high z-index for flipped pages to stay on top
-      page.style.zIndex = 10 + index;
+      page.style.zIndex = pages.length + index;
 
       page.style.transform = `rotateY(-180deg)`;
     } else {
@@ -62,7 +62,7 @@ function updateState(direction) {
 }
 
 function goNext() { if (currentIdx < pages.length) { currentIdx++; updateState(direction='next'); } }
-function goPrev() { if (currentIdx > 0) { currentIdx--; updateState(direction='previous'); } }
+function goPrev() { if (currentIdx > 0) { currentIdx--; updateState(direction='prev'); } }
 
 updateState();
 
