@@ -60,7 +60,7 @@ function updateState(direction) {
       // page.style.zIndex = detectBrowser() == "Safari"? 10 + index : pages.length + index;
       page.style.zIndex = pages.length + index;
 
-      page.style.transform = `rotateY(-180deg)`;
+      page.style.transform = `rotateY(-180deg) translateX(0px)`;
     } else {
       // Page is unflipped on the RIGHT
       page.classList.remove('flipped');
@@ -70,7 +70,8 @@ function updateState(direction) {
         page.style.zIndex = pages.length - index;
       }, 100);
 
-      page.style.transform = `rotateY(0deg)`;
+      const offset = (index - currentIdx) * 2;
+      page.style.transform = `rotateY(0deg) translateX(${offset}px)`;
     }
 
   });
