@@ -42,7 +42,7 @@ function updateState(direction) {
       // Page is flipped to the LEFT
       page.classList.add('flipped');
       // Immediate high z-index for flipped pages to stay on top
-      page.style.zIndex = 20 + index;
+      page.style.zIndex = 10 + index;
 
       page.style.transform = `rotateY(-180deg)`;
     } else {
