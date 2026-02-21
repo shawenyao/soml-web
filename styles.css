@@ -363,7 +363,7 @@ footer a {
 :root {
     --book-width: 545px;
     --book-height: 400px;
-    --flip-speed: 0.9s;
+    --flip-speed: 1.5s;
 }
 
 .viewport { perspective: 1800px; display: flex; justify-content: center; width: 100%; transform-style: preserve-3d; }
