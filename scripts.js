@@ -52,7 +52,7 @@ function updateState(direction) {
       // This prevents the "underneath" images from popping in too early
       setTimeout(() => {
         page.style.zIndex = pages.length - index;
-      }, 100);
+      }, 200);
 
       page.style.transform = `rotateY(0deg)`;
     }
