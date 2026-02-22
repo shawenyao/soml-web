@@ -131,7 +131,7 @@ const observer_book = new IntersectionObserver((entries) => {
       observer_book.unobserve(entry.target);
     }
   });
-}, { threshold: 0.9 });
+}, { threshold: 1.0 });
 
 observer_book.observe(viewport);
 
@@ -148,7 +148,7 @@ const observer_overlay = new IntersectionObserver((entries) => {
       entry.target.classList.remove('is-visible');
     }
   });
-}, { threshold: 0.9 });
+}, { threshold: 1.0 });
 
 observer_overlay.observe(document.getElementById('overlay1'));
 observer_overlay.observe(document.getElementById('overlay2'));
