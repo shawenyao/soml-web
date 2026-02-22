@@ -100,7 +100,7 @@ function handleEnd(e, endX, endY) {
   const diffY = endY - startY;
   if ((Math.abs(diffX) > thresholdX) && (Math.abs(diffX) > Math.abs(diffY))) {
     diffX > 0 ? goPrev() : goNext();
-  } //else if (Math.abs(diffY) > thresholdY){
+  //} else if (Math.abs(diffY) > thresholdY){
     //diffY > 0 ? goPrev() : goNext();
   } else {
     // CLICK LOGIC:
