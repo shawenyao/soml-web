@@ -183,48 +183,6 @@ section p {
     border-radius: 5px;
 }
 
-.image-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(255, 255, 0, 0.05);
-    /* Light overlay color */
-    border-radius: 5px;
-    /* Match image corners */
-    z-index: 1;
-    display: block;
-}
-
-.image-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-weight: 400;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-/* First line underlined */
-.image-text .line1 {
-    font-size: 30px;
-    text-decoration: underline;
-    white-space: nowrap;
-}
-
-.line2 {
-    font-size: 20px;
-    white-space: nowrap;
-}
-
-.line3 {
-    font-size: 18px;
-    white-space: nowrap;
-}
-
 footer {
     background: #111827;
     color: #d1d5db;
