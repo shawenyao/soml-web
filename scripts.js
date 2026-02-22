@@ -84,7 +84,7 @@ updateState();
 
 
 let startX = 0;
-const threshold_swipe = 45;
+const threshold_swipe = 30;
 
 function handleStart(e, x) {
   startX = x;
@@ -104,7 +104,7 @@ function handleEnd(e, endX) {
   if ((Math.abs(diffX) > threshold_swipe)) {
     // swipe logic
     diffX > 0 ? goPrev() : goNext();
-  } else if (Math.abs(diffX) == 0) {
+  } else {
     // click logic
     endX < window.innerWidth / 2 ? goPrev() : goNext();
   }
