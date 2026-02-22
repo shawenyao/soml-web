@@ -4,18 +4,18 @@ function isWeChat() {
 }
 
 function detectBrowser() {
-    const userAgentString = navigator.userAgent;
+  const userAgentString = navigator.userAgent;
 
-    let isChrome = !!window.chrome;
-    let isSafari = userAgentString.indexOf("Safari") > -1 && userAgentString.indexOf("Chrome") === -1;
-    
-    if (isChrome) {
-        return "Chrome";
-    } else if (isSafari) {
-        return "Safari";
-    } else {
-        return "Other";
-    }
+  let isChrome = !!window.chrome;
+  let isSafari = userAgentString.indexOf("Safari") > -1 && userAgentString.indexOf("Chrome") === -1;
+
+  if (isChrome) {
+    return "Chrome";
+  } else if (isSafari) {
+    return "Safari";
+  } else {
+    return "Other";
+  }
 }
 
 
@@ -58,7 +58,7 @@ function updateState(direction) {
       // Page is flipped to the LEFT
       page.classList.add('flipped');
       // Immediate high z-index for flipped pages to stay on top
-      page.style.zIndex = detectBrowser() == "Safari"? 10 + index : pages.length + index;
+      page.style.zIndex = detectBrowser() == "Safari" ? 10 + index : pages.length + index;
 
       page.style.transform = `rotateY(-180deg)`;
     } else {
@@ -77,8 +77,8 @@ function updateState(direction) {
 
 }
 
-function goNext() { if (currentIdx < pages.length) { currentIdx++; updateState(direction='next'); } }
-function goPrev() { if (currentIdx > 0) { currentIdx--; updateState(direction='prev'); } }
+function goNext() { if (currentIdx < pages.length) { currentIdx++; updateState(direction = 'next'); } }
+function goPrev() { if (currentIdx > 0) { currentIdx--; updateState(direction = 'prev'); } }
 
 updateState();
 
@@ -92,7 +92,7 @@ function handleStart(e, x) {
 
 let freezed = false;
 function handleEnd(e, endX) {
-  if(freezed) return;
+  if (freezed) return;
 
   // prevent double firing of touch and mouse events
   freezed = true;
@@ -104,7 +104,7 @@ function handleEnd(e, endX) {
   if ((Math.abs(diffX) > threshold_swipe)) {
     // swipe logic
     diffX > 0 ? goPrev() : goNext();
-  } else if (Math.abs(diffX) == 0){
+  } else if (Math.abs(diffX) == 0) {
     // click logic
     endX < window.innerWidth / 2 ? goPrev() : goNext();
   }
@@ -123,12 +123,11 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       goNext();
-      for (let i = 0; i < 3; i++) {
-        if (Math.random() < 0.3) {
-          setTimeout(() => {
-            goNext();
-          }, 300 * (i + 1)); 
-        }
+      random_page_flip_count = Math.floor(Math.random() * 4); // Random number between 0 and 3
+      for (let i = 0; i < random_page_flip_count; i++) {
+        setTimeout(() => {
+          goNext();
+        }, 300 * (i + 1));
       }
       observer.unobserve(entry.target);
     }
