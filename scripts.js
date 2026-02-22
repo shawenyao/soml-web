@@ -124,7 +124,7 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       goNext();
       for (let i = 0; i < 3; i++) {
-        if (Math.random() < 0.5) {
+        if (Math.random() < 0.3) {
           setTimeout(() => {
             goNext();
           }, 300 * (i + 1)); 
