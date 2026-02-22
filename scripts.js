@@ -123,12 +123,14 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       goNext();
+
       random_page_flip_count = Math.floor(Math.random() * 3);
       for (let i = 0; i < random_page_flip_count; i++) {
         setTimeout(() => {
           goNext();
         }, 300 * (i + 1));
       }
+      
       observer.unobserve(entry.target);
     }
   });
