@@ -84,18 +84,14 @@ updateState();
 
 
 let startX = 0;
-let startY = 0;
-const thresholdX = 30; // Reduced threshold for more sensitivity
-const thresholdY = 1; // Reduced threshold for more sensitivity
+const threshold_swipe = 45;
 
-function handleStart(e, x, y) {
-
+function handleStart(e, x) {
   startX = x;
-  startY = y;
 }
 
 let freezed = false;
-function handleEnd(e, endX, endY) {
+function handleEnd(e, endX) {
   if(freezed) return;
 
   // prevent double firing of touch and mouse events
@@ -105,11 +101,10 @@ function handleEnd(e, endX, endY) {
   }, 100);
 
   const diffX = endX - startX;
-  const diffY = endY - startY;
-  if ((Math.abs(diffX) > thresholdX)) {
+  if ((Math.abs(diffX) > threshold_swipe)) {
     // swipe logic
     diffX > 0 ? goPrev() : goNext();
-  } else if (Math.abs(diffY) < thresholdY){
+  } else if (Math.abs(diffX) == 0){
     // click logic
     endX < window.innerWidth / 2 ? goPrev() : goNext();
   }
@@ -117,10 +112,10 @@ function handleEnd(e, endX, endY) {
 
 const viewport = document.querySelector('.viewport');
 // Event Listeners
-viewport.addEventListener('touchstart', e => handleStart(e, e.touches[0].clientX, e.touches[0].clientY), { passive: false });
-viewport.addEventListener('touchend', e => handleEnd(e, e.changedTouches[0].clientX, e.changedTouches[0].clientY), { passive: false });
-viewport.addEventListener('mousedown', e => handleStart(e, e.clientX, e.clientY));
-viewport.addEventListener('mouseup', e => handleEnd(e, e.clientX, e.clientY));
+viewport.addEventListener('touchstart', e => handleStart(e, e.touches[0].clientX));
+viewport.addEventListener('touchend', e => handleEnd(e, e.changedTouches[0].clientX));
+viewport.addEventListener('mousedown', e => handleStart(e, e.clientX));
+viewport.addEventListener('mouseup', e => handleEnd(e, e.clientX));
 
 
 // 2. Define what happens when it reaches the viewport
