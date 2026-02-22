@@ -183,6 +183,18 @@ section p {
     border-radius: 5px;
 }
 
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-overlay.is-visible {
+  opacity: 1;
+}
+
 footer {
     background: #111827;
     color: #d1d5db;

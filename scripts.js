@@ -117,9 +117,8 @@ viewport.addEventListener('touchend', e => handleEnd(e, e.changedTouches[0].clie
 viewport.addEventListener('mousedown', e => handleStart(e, e.clientX));
 viewport.addEventListener('mouseup', e => handleEnd(e, e.clientX));
 
-
-// 2. Define what happens when it reaches the viewport
-const observer = new IntersectionObserver((entries) => {
+// book page auto flip
+const observer_book = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       random_page_flip_count = Math.floor(Math.random() * 5) + 1;
@@ -129,10 +128,28 @@ const observer = new IntersectionObserver((entries) => {
         }, 300 * i);
       }
 
-      observer.unobserve(entry.target);
+      observer_book.unobserve(entry.target);
     }
   });
 }, { threshold: 1.0 });
 
-// 3. Start observing
-observer.observe(viewport);
+observer_book.observe(viewport);
+
+
+// image overlay fade in
+const observer_overlay = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      // Stop observing if you only want it to fade in once
+      // observer.unobserve(entry.target); 
+    } else {
+      // Optional: Remove class to fade back out when scrolling away
+      entry.target.classList.remove('is-visible');
+    }
+  });
+}, { threshold: 0.9 });
+
+observer_overlay.observe(document.getElementById('overlay1'));
+observer_overlay.observe(document.getElementById('overlay2'));
+observer_overlay.observe(document.getElementById('overlay3'));
