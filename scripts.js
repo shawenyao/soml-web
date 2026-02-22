@@ -98,10 +98,10 @@ function handleStart(e, x, y) {
 function handleEnd(e, endX, endY) {
   const diffX = endX - startX;
   const diffY = endY - startY;
-  if (Math.abs(diffX) > thresholdX) {
+  if ((Math.abs(diffX) > thresholdX) && (Math.abs(diffX) > Math.abs(diffY))) {
     diffX > 0 ? goPrev() : goNext();
-  } else if (Math.abs(diffY) > thresholdY){
-    diffY > 0 ? goPrev() : goNext();
+  } //else if (Math.abs(diffY) > thresholdY){
+    //diffY > 0 ? goPrev() : goNext();
   } else {
     // CLICK LOGIC:
     // Left half of screen -> Previous
