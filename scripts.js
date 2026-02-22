@@ -122,13 +122,11 @@ viewport.addEventListener('mouseup', e => handleEnd(e, e.clientX));
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      goNext();
-
-      random_page_flip_count = Math.floor(Math.random() * 4);
+      random_page_flip_count = Math.floor(Math.random() * 4) + 1;
       for (let i = 0; i < random_page_flip_count; i++) {
         setTimeout(() => {
           goNext();
-        }, 300 * (i + 1));
+        }, 300 * i);
       }
 
       observer.unobserve(entry.target);
