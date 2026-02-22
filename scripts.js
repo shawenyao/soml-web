@@ -123,10 +123,17 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       goNext();
+      for (let i = 0; i < 3; i++) {
+        if (Math.random() < 0.5) {
+          setTimeout(() => {
+            goNext();
+          }, 300 * (i + 1)); 
+        }
+      }
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 1 });
+}, { threshold: 0.9 });
 
 // 3. Start observing
 observer.observe(viewport);
