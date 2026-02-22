@@ -338,7 +338,7 @@ footer a {
     justify-content: center;
     width: 100%;
     transform-style: preserve-3d;
-    touch-action: pan-y pinch-zoom;
+    touch-action: pan-y;
 }
 
 .book {
