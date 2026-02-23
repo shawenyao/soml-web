@@ -144,6 +144,8 @@ const observer_overlay = new IntersectionObserver((entries) => {
     } else {
       entry.target.classList.remove('is-visible');
     }
+    
+    observer_overlay.unobserve(entry.target);
   });
 }, { threshold: 1.0 });
 
