@@ -144,11 +144,9 @@ const observer_overlay = new IntersectionObserver((entries) => {
     } else {
       entry.target.classList.remove('is-visible');
     }
-    
-    observer_overlay.unobserve(entry.target);
   });
 }, { threshold: 1.0 });
 
-observer_overlay.observe(document.getElementById('overlay1'));
-observer_overlay.observe(document.getElementById('overlay2'));
-observer_overlay.observe(document.getElementById('overlay3'));
+observer_overlay.observe(document.querySelector('.fade-trigger'));
+//observer_overlay.observe(document.getElementById('overlay2'));
+//observer_overlay.observe(document.getElementById('overlay3'));
