@@ -195,8 +195,8 @@ section p {
     inset: 0;
     display: block;
     opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+    transform: translateY(-30px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .fade-trigger.is-visible .image-overlay {
