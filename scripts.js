@@ -125,13 +125,14 @@ viewport.addEventListener('mouseup', e => handleEnd(e, e.clientX, e.clientY));
 const observer_book = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      random_page_flip_count = Math.floor(Math.random() * 3) + 1;
-      for (let i = 0; i < random_page_flip_count; i++) {
-        setTimeout(() => {
-          goNext();
-        }, 300 * i);
-      }
+      // random_page_flip_count = Math.floor(Math.random() * 3) + 1;
+      // for (let i = 0; i < random_page_flip_count; i++) {
+      //   setTimeout(() => {
+      //     goNext();
+      //   }, 300 * i);
+      // }
 
+      goNext();
       observer_book.unobserve(entry.target);
     }
   });
