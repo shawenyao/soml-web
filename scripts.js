@@ -105,7 +105,7 @@ function handleEnd(e, endX, endY) {
 
   const diffX = endX - startX;
   const diffY = endY - startY;
-  if (Math.abs(diffX) > threshold_swipe) {
+  if ((Math.abs(diffX) > threshold_swipe) && (Math.abs(diffX) > Math.abs(diffY)) {
     // swipe logic
     diffX > 0 ? goPrev() : goNext();
   } else if ((Math.abs(diffX) < threshold_click) && (Math.abs(diffY) < threshold_click)) {
