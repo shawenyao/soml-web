@@ -132,7 +132,9 @@ const observer_book = new IntersectionObserver((entries) => {
       //   }, 300 * i);
       // }
 
-      goNext();
+      setTimeout(() => {
+        goNext();
+      }, 250);
       observer_book.unobserve(entry.target);
     }
   });
