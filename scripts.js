@@ -122,20 +122,21 @@ viewport.addEventListener('mousedown', e => handleStart(e, e.clientX, e.clientY)
 viewport.addEventListener('mouseup', e => handleEnd(e, e.clientX, e.clientY));
 
 // book page auto flip
+let count = 0;
 const observer_book = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       // random_page_flip_count = Math.floor(Math.random() * 3) + 1;
-      for (let i = 0; i < 3; i++) {
-        setTimeout(() => {
-          goNext();
-        }, 250 * i);
-      }
+      // for (let i = 0; i < random_page_flip_count; i++) {
+      //   setTimeout(() => {
+      //     goNext();
+      //   }, 250 * i);
+      // }
 
-      // setTimeout(() => {
-      //   goNext();
-      // }, 250);
-      observer_book.unobserve(entry.target);
+      setTimeout(() => {
+        goNext();
+      }, 250);
+      // observer_book.unobserve(entry.target);
     }
   });
 }, { threshold: 1.0 });
