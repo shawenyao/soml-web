@@ -20,16 +20,39 @@ function detectBrowser() {
 
 
 if (isWeChat()) {
-  document.getElementById('splash').innerHTML = `
-<div class="slideshow">
-  <div class="slides">
-    <div class="slide"><img src="images/h1.jpg"></div>
-    <div class="slide"><img src="images/h2.jpg"></div>
-    <div class="slide"><img src="images/h3.jpg"></div>
-    <div class="slide"><img src="images/h4.jpg"></div>
-  </div>
-</div>
-  `;
+  video = document.querySelectorAll(".video")[0];
+  if (video) {
+    const isVideoPlaying =
+          video.currentTime > 0 &&
+          !video.paused &&
+          !video.ended &&
+          video.readyState > 2;
+
+    //if video is not playing, play it
+    if (!isVideoPlaying) {
+      video.play();
+    }
+  }
+}
+
+  // check if WeixinJSBridge exist and is ready
+  // WeixinJSBridge is a global object in wechat browser
+  // the reason we use it here is because we need to
+  // trigger video play action in WeixinJSBridge invoke callback
+  // otherwise the video will not play
+  if ((window as any).WeixinJSBridge) {
+    doPlay();
+  } else {
+    // add event listener for WeixinJSBridgeReady 
+    // in case it's not ready yet
+    document.addEventListener(
+      "WeixinJSBridgeReady",
+      function () {
+        doPlay();
+      },
+      false
+    );
+  } 
 }
 
 const book = document.getElementById('book');
