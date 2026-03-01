@@ -20,19 +20,16 @@ function detectBrowser() {
 
 
 if (isWeChat()) {
-  video = document.querySelectorAll(".video")[0];
-  if (video) {
-    const isVideoPlaying =
-          video.currentTime > 0 &&
-          !video.paused &&
-          !video.ended &&
-          video.readyState > 2;
-
-    //if video is not playing, play it
-    if (!isVideoPlaying) {
-      video.play();
-    }
-  }
+  document.getElementById('splash').innerHTML = `
+<div class="slideshow">
+  <div class="slides">
+    <div class="slide"><img src="images/h1.jpg"></div>
+    <div class="slide"><img src="images/h2.jpg"></div>
+    <div class="slide"><img src="images/h3.jpg"></div>
+    <div class="slide"><img src="images/h4.jpg"></div>
+  </div>
+</div>
+  `;
 }
 
 const book = document.getElementById('book');
