@@ -150,7 +150,7 @@ const observer_overlay = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         entry.target.classList.add('is-visible');
-      }, Math.floor(Math.random() * 300));
+      }, Math.floor(Math.random() * 400));
     } else {
       setTimeout(() => {
         entry.target.classList.remove('is-visible');
